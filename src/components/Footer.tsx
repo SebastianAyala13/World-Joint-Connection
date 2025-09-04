@@ -11,7 +11,8 @@ import {
   Instagram, 
   Linkedin,
   ArrowUp,
-  Heart
+  Heart,
+  ArrowRight
 } from 'lucide-react';
 import Logo from './Logo';
 
@@ -279,7 +280,7 @@ export default function Footer() {
               className="text-secondary text-sm flex items-center gap-2"
             >
               © 2024 World Joint Connection. Hecho con 
-              <Heart className="w-4 h-4 text-red-500" />
+              <span className="text-red-500">❤️</span>
               en Colombia
             </motion.p>
 
@@ -289,7 +290,7 @@ export default function Footer() {
               whileTap={{ scale: 0.9 }}
               className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center text-white hover:shadow-glow transition-shadow"
             >
-              <ArrowUp className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5 rotate-[-90deg]" />
             </motion.button>
           </div>
         </div>

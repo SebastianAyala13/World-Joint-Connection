@@ -8,7 +8,6 @@ import {
   Users,
   Clock,
   DollarSign,
-  Target,
   Star,
   CheckCircle,
   ArrowRight
@@ -18,7 +17,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Seguridad Garantizada',
-    description: 'Protección de datos de nivel empresarial con encriptación SSL y cumplimiento GDPR.',
+    description: 'Protege tu información y la de tus clientes con sistemas de seguridad de nivel empresarial y cumplimiento normativo.',
     features: ['Encriptación SSL', 'Cumplimiento GDPR', 'Backup automático'],
     color: 'success',
     gradient: 'from-success to-success-600'
@@ -26,7 +25,7 @@ const benefits = [
   {
     icon: Zap,
     title: 'Automatización Inteligente',
-    description: 'Reduce tareas manuales y aumenta la eficiencia con flujos de trabajo automatizados.',
+    description: 'Reduce tareas manuales y aumenta la eficiencia con flujos de trabajo automatizados y procesos inteligentes.',
     features: ['Workflows personalizados', 'Integración API', 'Escalabilidad'],
     color: 'warning',
     gradient: 'from-warning to-warning-600'
@@ -146,7 +145,7 @@ export default function Benefits() {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 component-spacing"
         >
-          {benefits.map((benefit, index) => (
+          {benefits.map((benefit) => (
             <motion.div
               key={benefit.title}
               variants={itemVariants}

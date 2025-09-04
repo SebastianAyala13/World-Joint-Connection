@@ -3,65 +3,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Star, Quote, ArrowRight, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 
 const testimonials = [
   {
     id: 1,
-    name: 'Anthony Smith',
-    position: 'CEO',
-    company: 'TechStart',
-    rating: 5,
-    quote: 'World Joint Connection transformó completamente nuestras operaciones de ventas. El incremento del 35% en conversión superó todas nuestras expectativas.',
-    avatar: '/testimonios/anthony.jpg',
-    industry: 'E-commerce Retail',
-    result: 'Aumento del 50% en satisfacción del cliente'
-  },
-  {
-    id: 2,
-    name: 'Brian Johnson',
-    position: 'Director de Operaciones',
-    company: 'RetailPro',
-    rating: 5,
-    quote: 'La calidad del servicio y la atención al detalle son excepcionales. Nuestros clientes han notado la diferencia inmediatamente.',
-    avatar: '/testimonios/brian.jpg',
-    industry: 'Retail',
-    result: 'Mejora del 40% en retención de clientes'
-  },
-  {
-    id: 3,
-    name: 'Carlos García',
-    position: 'Gerente Comercial',
-    company: 'HealthCare Plus',
-    rating: 5,
-    quote: 'La implementación fue rápida y eficiente. El equipo de World Joint Connection es profesional y comprometido con los resultados.',
-    avatar: '/testimonios/carlos.jpg',
-    industry: 'Proveedor de Salud',
-    result: 'Optimización del 60% en agendamiento de citas'
-  },
-  {
-    id: 4,
-    name: 'Laura Martínez',
-    position: 'Directora de Marketing',
-    company: 'Digital Solutions',
-    rating: 5,
-    quote: 'Los resultados han sido increíbles. Nuestras conversiones aumentaron un 45% en solo 3 meses de implementación.',
-    avatar: '/testimonios/laura.jpg',
-    industry: 'Marketing Digital',
-    result: 'Incremento del 45% en conversiones'
-  },
-  {
-    id: 5,
-    name: 'James Wilson',
-    position: 'Fundador',
-    company: 'StartupHub',
-    rating: 5,
-    quote: 'La atención al cliente 24/7 ha revolucionado nuestra startup. Nuestros usuarios están encantados con la rapidez de respuesta.',
-    avatar: '/testimonios/james.jpg',
-    industry: 'Startup Tech',
-    result: 'Reducción del 70% en tiempo de respuesta'
-  },
-  {
-    id: 6,
     name: 'Stephanie Chen',
     position: 'VP de Operaciones',
     company: 'Global Logistics',
@@ -72,26 +18,81 @@ const testimonials = [
     result: 'Aumento del 55% en eficiencia operativa'
   },
   {
-    id: 7,
-    name: 'Michael Rodriguez',
-    position: 'Director General',
-    company: 'Innovation Corp',
+    id: 2,
+    name: 'James Rodriguez',
+    position: 'CEO',
+    company: 'TechStart Solutions',
     rating: 5,
-    quote: 'Los resultados superaron nuestras expectativas. El ROI fue evidente desde el primer mes de implementación.',
-    avatar: '/testimonios/michael.jpg',
-    industry: 'Consultoría',
-    result: 'ROI del 300% en 6 meses'
+    quote: 'Nuestras conversiones aumentaron un 40% en solo 3 meses. El equipo es profesional y los resultados hablan por sí solos.',
+    avatar: '/testimonios/james.jpg',
+    industry: 'Tecnología',
+    result: '40% de incremento en conversiones'
+  },
+  {
+    id: 3,
+    name: 'Brian Thompson',
+    position: 'Director de Marketing',
+    company: 'E-commerce Plus',
+    rating: 5,
+    quote: 'La atención al cliente 24/7 ha transformado completamente la experiencia de nuestros usuarios. Excelente servicio.',
+    avatar: '/testimonios/brian.jpg',
+    industry: 'E-commerce',
+    result: '95% de satisfacción del cliente'
+  },
+  {
+    id: 4,
+    name: 'Carlos Mendoza',
+    position: 'Gerente General',
+    company: 'Retail Solutions',
+    rating: 5,
+    quote: 'Los analytics en tiempo real nos han dado insights valiosos para tomar decisiones estratégicas más informadas.',
+    avatar: '/testimonios/carlos.jpg',
+    industry: 'Retail',
+    result: '30% de mejora en ROI'
+  },
+  {
+    id: 5,
+    name: 'Anthony Wilson',
+    position: 'Fundador',
+    company: 'Digital Agency Pro',
+    rating: 5,
+    quote: 'La automatización ha reducido nuestro tiempo de respuesta en un 70%. Nuestros clientes están encantados.',
+    avatar: '/testimonios/anthony.jpg',
+    industry: 'Marketing Digital',
+    result: '70% de reducción en tiempo de respuesta'
+  },
+  {
+    id: 6,
+    name: 'Laura Martinez',
+    position: 'COO',
+    company: 'Healthcare Solutions',
+    rating: 5,
+    quote: 'La seguridad y cumplimiento normativo son excepcionales. Confiamos plenamente en su infraestructura.',
+    avatar: '/testimonios/laura.jpg',
+    industry: 'Salud',
+    result: '100% de cumplimiento normativo'
+  },
+  {
+    id: 7,
+    name: 'Jason Lee',
+    position: 'Director de Ventas',
+    company: 'B2B Services',
+    rating: 5,
+    quote: 'Nuestro pipeline de ventas se ha optimizado significativamente. Los resultados superan nuestras expectativas.',
+    avatar: '/testimonios/jason.jpg',
+    industry: 'B2B',
+    result: '60% de mejora en pipeline de ventas'
   },
   {
     id: 8,
-    name: 'Sarah Thompson',
-    position: 'CEO',
-    company: 'EduTech Solutions',
+    name: 'Monica Garcia',
+    position: 'VP de Producto',
+    company: 'SaaS Platform',
     rating: 5,
-    quote: 'La plataforma es intuitiva y fácil de usar. Nuestros profesores y estudiantes están muy satisfechos con la experiencia.',
-    avatar: '/testimonios/sarah.jpg',
-    industry: 'Educación',
-    result: 'Mejora del 65% en engagement estudiantil'
+    quote: 'La escalabilidad de la solución nos permite crecer sin preocupaciones. El soporte técnico es excepcional.',
+    avatar: '/testimonios/monica.jpg',
+    industry: 'SaaS',
+    result: '3x de crecimiento en usuarios activos'
   }
 ];
 
@@ -99,27 +100,31 @@ export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000); // Change every 4 seconds
+      setCurrentIndex((prevIndex) => 
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, testimonials.length]);
+  }, [isAutoPlaying]);
 
-  // Pause auto-play on hover
   const handleMouseEnter = () => setIsAutoPlaying(false);
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setCurrentIndex((prevIndex) => 
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
   };
 
   return (
@@ -133,17 +138,16 @@ export default function Testimonials() {
           transition={{ duration: 0.8 }}
           className="text-center content-spacing"
         >
-          <motion.a
-            href="#contacto"
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 text-primary hover:text-primary-400 transition-colors mb-6"
+            className="badge mb-6"
           >
+            <Quote className="w-4 h-4" />
             <span>¿Quieres resultados similares?</span>
-            <ExternalLink className="w-4 h-4" />
-          </motion.a>
+          </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -173,34 +177,34 @@ export default function Testimonials() {
           </motion.p>
         </motion.div>
 
-        {/* Testimonials Carousel */}
-        <div className="relative max-w-6xl mx-auto">
+        {/* Main Content */}
+        <div className="relative">
           {/* Navigation Arrows */}
           <motion.button
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.8 }}
             onClick={prevTestimonial}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-surface border border-border rounded-full flex items-center justify-center text-primary hover:bg-surface-light transition-colors shadow-lg"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary hover:bg-surface hover:scale-110 transition-all duration-300 border border-border/50"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
+            <ArrowRight className="w-6 h-6 rotate-180" />
           </motion.button>
 
           <motion.button
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 1.0 }}
             onClick={nextTestimonial}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-surface border border-border rounded-full flex items-center justify-center text-primary hover:bg-surface-light transition-colors shadow-lg"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary hover:bg-surface hover:scale-110 transition-all duration-300 border border-border/50"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            <ArrowRight className="w-6 h-6" />
           </motion.button>
 
-          {/* Main Carousel */}
-          <div
-            className="overflow-hidden"
+          {/* Testimonials Carousel */}
+          <div 
+            className="relative overflow-hidden"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -210,8 +214,8 @@ export default function Testimonials() {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
-                className="text-center"
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="w-full"
               >
                 <div className="grid md:grid-cols-3 gap-8">
                   {/* Current Testimonial */}
@@ -236,7 +240,7 @@ export default function Testimonials() {
                       <div className="mb-8">
                         <Quote className="w-8 h-8 text-primary mx-auto mb-4 opacity-50" />
                         <blockquote className="text-xl text-secondary leading-relaxed italic">
-                          "{testimonials[currentIndex].quote}"
+                          &ldquo;{testimonials[currentIndex].quote}&rdquo;
                         </blockquote>
                       </div>
 
@@ -250,9 +254,11 @@ export default function Testimonials() {
                       {/* Author */}
                       <div className="flex items-center justify-center gap-4">
                         <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
-                          <img
+                          <Image
                             src={testimonials[currentIndex].avatar}
                             alt={testimonials[currentIndex].name}
+                            width={64}
+                            height={64}
                             className="w-full h-full object-cover"
                           />
                         </div>

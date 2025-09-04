@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, MessageCircle, Play, Star, Users, TrendingUp, CheckCircle, Shield, Award } from 'lucide-react';
+import { ArrowRight, MessageCircle, Play, Star, Users, TrendingUp, Shield, Award } from 'lucide-react';
 
 export default function Hero() {
   return (

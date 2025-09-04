@@ -2,14 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { 
-  Users, 
   TrendingUp, 
-  Clock, 
+  Users, 
+  DollarSign, 
+  Clock,
   Star,
-  Award,
-  Zap,
-  Target,
-  Globe
+  CheckCircle,
+  ArrowRight
 } from 'lucide-react';
 
 const kpiData = [
@@ -46,7 +45,7 @@ const kpiData = [
     gradient: 'from-warning to-warning-600'
   },
   {
-    icon: Award,
+    icon: CheckCircle,
     value: '99.9%',
     label: 'Uptime Garantizado',
     description: 'Disponibilidad del servicio con SLA garantizado',
@@ -54,7 +53,7 @@ const kpiData = [
     gradient: 'from-secondary to-secondary-600'
   },
   {
-    icon: Globe,
+    icon: ArrowRight,
     value: '15+',
     label: 'Países Atendidos',
     description: 'Presencia global con soporte multiidioma',
@@ -104,7 +103,7 @@ export default function KPI() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="badge mb-6"
           >
-            <Zap className="w-4 h-4" />
+            <DollarSign className="w-4 h-4" />
             <span>Nuestros Números</span>
           </motion.div>
 

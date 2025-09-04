@@ -145,7 +145,7 @@ export default function Services() {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 component-spacing"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.title}
               variants={itemVariants}
@@ -198,7 +198,7 @@ export default function Services() {
                   className="inline-flex items-center gap-2 text-primary font-medium hover:text-primary-400 transition-colors duration-300"
                 >
                   <span>Saber más</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-5 h-5" />
                 </motion.a>
               </div>
             </motion.div>
