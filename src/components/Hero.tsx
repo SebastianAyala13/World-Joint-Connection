@@ -6,10 +6,26 @@ import { ArrowRight, MessageCircle, Play, Star, Users, TrendingUp, Shield, Award
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background-light to-background">
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-20"
+        >
+          <source src="/hero/hero-bg.webm" type="video/webm" />
+          <source src="/hero/hero-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay para mejorar legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80" />
+      </div>
+
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-mesh opacity-20 animate-gradient-xy" />
+        <div className="absolute inset-0 bg-gradient-mesh opacity-10 animate-gradient-xy" />
         
         {/* Floating Elements */}
         <div className="floating-element" />
