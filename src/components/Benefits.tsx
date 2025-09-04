@@ -88,7 +88,7 @@ const itemVariants = {
 
 export default function Benefits() {
   return (
-    <section className="section-spacing bg-gradient-to-b from-background-light to-background">
+    <section className="benefits-section">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -156,11 +156,11 @@ export default function Benefits() {
               <div className={`absolute inset-0 bg-gradient-${benefit.gradient} rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300`} />
               
               {/* Benefit Card */}
-              <div className="card hover:border-primary/50">
+              <div className="card hover:border-primary/50 text-center">
                 {/* Icon */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className={`w-16 h-16 bg-gradient-${benefit.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-glow transition-shadow duration-300`}
+                  className={`w-16 h-16 bg-gradient-${benefit.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-glow transition-shadow duration-300 mx-auto`}
                 >
                   <benefit.icon className="w-8 h-8 text-white" />
                 </motion.div>
@@ -183,7 +183,7 @@ export default function Benefits() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: featureIndex * 0.1 }}
-                      className="flex items-center gap-3 text-sm text-secondary"
+                      className="flex items-center gap-3 text-sm text-secondary justify-center"
                     >
                       <CheckCircle className={`w-4 h-4 text-${benefit.color} flex-shrink-0`} />
                       <span>{feature}</span>

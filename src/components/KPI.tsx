@@ -86,7 +86,7 @@ const itemVariants = {
 
 export default function KPI() {
   return (
-    <section className="section-spacing bg-gradient-to-b from-background to-background-light">
+    <section className="kpi-section">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -143,7 +143,7 @@ export default function KPI() {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 component-spacing"
         >
-          {kpiData.map((kpi, index) => (
+          {kpiData.map((kpi) => (
             <motion.div
               key={kpi.label}
               variants={itemVariants}
@@ -154,44 +154,27 @@ export default function KPI() {
               <div className={`absolute inset-0 bg-gradient-${kpi.gradient} rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300`} />
               
               {/* KPI Card */}
-              <div className="card hover:border-primary/50">
+              <div className="card hover:border-primary/50 text-center">
                 {/* Icon */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className={`w-16 h-16 bg-gradient-${kpi.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-glow transition-shadow duration-300`}
+                  className={`w-16 h-16 bg-gradient-${kpi.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-glow transition-shadow duration-300 mx-auto`}
                 >
                   <kpi.icon className="w-8 h-8 text-white" />
                 </motion.div>
 
-                {/* Value */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 0.5, type: "spring", stiffness: 200 }}
-                  className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-2"
-                >
-                  {kpi.value}
-                </motion.div>
-
-                {/* Label */}
-                <h3 className="heading-4 mb-3 group-hover:text-primary transition-colors duration-300">
+                {/* Content */}
+                <h3 className="heading-4 mb-4 group-hover:text-primary transition-colors duration-300">
                   {kpi.label}
                 </h3>
                 
-                {/* Description */}
+                <div className="text-3xl font-bold text-primary mb-2">
+                  {kpi.value}
+                </div>
+                
                 <p className="text-secondary leading-relaxed">
                   {kpi.description}
                 </p>
-
-                {/* Animated Border */}
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "100%" }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 + 1, duration: 0.8 }}
-                  className={`h-1 bg-gradient-${kpi.gradient} rounded-full mt-6`}
-                />
               </div>
             </motion.div>
           ))}

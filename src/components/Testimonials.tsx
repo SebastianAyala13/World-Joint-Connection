@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { Star, Quote, ArrowRight, ExternalLink } from 'lucide-react';
+import { Star, Quote, ArrowRight, ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 
 const testimonials = [
@@ -128,7 +128,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonios" className="section-spacing bg-gradient-to-b from-background to-background-light">
+    <section id="testimonios" className="testimonials-section">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -178,25 +178,21 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Main Content */}
-        <div className="relative">
+        <div className="relative max-w-7xl mx-auto px-4">
           {/* Navigation Arrows */}
           <motion.button
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.8 }}
             onClick={prevTestimonial}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary hover:bg-surface hover:scale-110 transition-all duration-300 border border-border/50"
           >
-            <ArrowRight className="w-6 h-6 rotate-180" />
+            <ArrowLeft className="w-6 h-6" />
           </motion.button>
 
           <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.0 }}
             onClick={nextTestimonial}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-surface/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary hover:bg-surface hover:scale-110 transition-all duration-300 border border-border/50"
           >
             <ArrowRight className="w-6 h-6" />
@@ -215,19 +211,19 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="w-full"
+                className="w-full flex justify-center"
               >
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="w-full max-w-4xl">
                   {/* Current Testimonial */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="col-span-1 md:col-span-3"
+                    className="w-full"
                   >
-                    <div className="bg-gradient-to-br from-surface to-surface-dark rounded-3xl p-8 border border-border/50 shadow-2xl max-w-4xl mx-auto">
+                    <div className="bg-gradient-to-br from-surface to-surface-dark rounded-3xl p-8 border border-border/50 shadow-2xl w-full text-center">
                       {/* Industry & Result Badge */}
-                      <div className="mb-6">
+                      <div className="mb-6 text-center">
                         <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-4 py-2 rounded-full text-sm font-medium mb-3">
                           <span>{testimonials[currentIndex].industry}</span>
                         </div>
@@ -237,9 +233,9 @@ export default function Testimonials() {
                       </div>
 
                       {/* Quote */}
-                      <div className="mb-8">
+                      <div className="mb-8 text-center">
                         <Quote className="w-8 h-8 text-primary mx-auto mb-4 opacity-50" />
-                        <blockquote className="text-xl text-secondary leading-relaxed italic">
+                        <blockquote className="text-xl text-secondary leading-relaxed italic text-center">
                           &ldquo;{testimonials[currentIndex].quote}&rdquo;
                         </blockquote>
                       </div>
@@ -251,23 +247,26 @@ export default function Testimonials() {
                         ))}
                       </div>
 
-                      {/* Author */}
-                      <div className="flex items-center justify-center gap-4">
-                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
+                      {/* Author - Completamente Centrado */}
+                      <div className="flex flex-col items-center justify-center gap-4 text-center">
+                        <div className="w-20 h-20 rounded-full overflow-hidden border-3 border-primary shadow-lg">
                           <Image
                             src={testimonials[currentIndex].avatar}
                             alt={testimonials[currentIndex].name}
-                            width={64}
-                            height={64}
+                            width={80}
+                            height={80}
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="text-left">
-                          <h4 className="text-primary font-semibold text-lg">
+                        <div className="text-center">
+                          <h4 className="text-primary font-semibold text-xl mb-1">
                             {testimonials[currentIndex].name}
                           </h4>
-                          <p className="text-secondary">
-                            {testimonials[currentIndex].position}, {testimonials[currentIndex].company}
+                          <p className="text-secondary text-sm">
+                            {testimonials[currentIndex].position}
+                          </p>
+                          <p className="text-secondary text-sm opacity-80">
+                            {testimonials[currentIndex].company}
                           </p>
                         </div>
                       </div>
@@ -278,8 +277,8 @@ export default function Testimonials() {
             </AnimatePresence>
           </div>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-8">
+          {/* Dots Indicator - Mejorado */}
+          <div className="flex justify-center gap-3 mt-8 mb-4">
             {testimonials.map((_, index) => (
               <motion.button
                 key={index}
@@ -288,11 +287,19 @@ export default function Testimonials() {
                 whileTap={{ scale: 0.8 }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-primary scale-125'
+                    ? 'bg-primary scale-125 shadow-lg'
                     : 'bg-border hover:bg-border-light'
                 }`}
+                aria-label={`Ver testimonio ${index + 1} de ${testimonials.length}`}
               />
             ))}
+          </div>
+          
+          {/* Indicador de posición */}
+          <div className="text-center mb-8">
+            <span className="text-sm text-secondary">
+              {currentIndex + 1} de {testimonials.length} testimonios
+            </span>
           </div>
         </div>
 

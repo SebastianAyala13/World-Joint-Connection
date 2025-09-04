@@ -59,7 +59,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="section-spacing bg-gradient-to-b from-background-light to-background">
+    <section id="faq" className="faq-section">
       <div className="container">
         {/* Header */}
         <motion.div

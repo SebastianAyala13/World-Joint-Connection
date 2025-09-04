@@ -88,7 +88,7 @@ const itemVariants = {
 
 export default function Services() {
   return (
-    <section id="servicios" className="section-spacing bg-gradient-to-b from-background to-background-light">
+    <section id="servicios" className="services-section">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -156,11 +156,11 @@ export default function Services() {
               <div className={`absolute inset-0 bg-gradient-${service.gradient} rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300`} />
               
               {/* Service Card */}
-              <div className="card hover:border-primary/50">
+              <div className="card hover:border-primary/50 text-center">
                 {/* Icon */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className={`w-16 h-16 bg-gradient-${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-glow transition-shadow duration-300`}
+                  className={`w-16 h-16 bg-gradient-${service.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-glow transition-shadow duration-300 mx-auto`}
                 >
                   <service.icon className="w-8 h-8 text-white" />
                 </motion.div>
@@ -183,7 +183,7 @@ export default function Services() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: featureIndex * 0.1 }}
-                      className="flex items-center gap-3 text-sm text-secondary"
+                      className="flex items-center gap-3 text-sm text-secondary justify-center"
                     >
                       <CheckCircle className={`w-4 h-4 text-${service.color} flex-shrink-0`} />
                       <span>{feature}</span>
@@ -247,6 +247,9 @@ export default function Services() {
           </div>
         </motion.div>
       </div>
+      
+      {/* Separador visual */}
+      <div className="section-divider-thick mt-16" />
     </section>
   );
 }

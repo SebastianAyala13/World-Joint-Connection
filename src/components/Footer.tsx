@@ -1,17 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { 
+import {
   Phone, 
-  Mail, 
-  MapPin, 
-  MessageCircle, 
+  Mail,
+  MapPin,
   Facebook, 
   Twitter, 
   Instagram, 
   Linkedin,
-  ArrowUp,
-  Heart,
   ArrowRight
 } from 'lucide-react';
 import Logo from './Logo';
@@ -66,7 +63,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <motion.div
+          <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -75,8 +72,8 @@ export default function Footer() {
             >
               <div className="mb-6">
                 <Logo size="md" showText={true} />
-              </div>
-              
+            </div>
+
               <p className="text-secondary mb-6 leading-relaxed">
                 Líder en soluciones de atención al cliente y gestión de ventas. 
                 Transformamos tu negocio con tecnología de vanguardia y servicio personalizado.
@@ -98,7 +95,7 @@ export default function Footer() {
                 </div>
               </div>
             </motion.div>
-          </div>
+            </div>
 
           {/* Services Links */}
           <motion.div
@@ -205,7 +202,7 @@ export default function Footer() {
                     </a>
                   </motion.li>
                 ))}
-              </ul>
+            </ul>
             </div>
           </motion.div>
         </div>
