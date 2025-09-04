@@ -64,11 +64,11 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== SISTEMA DE TIPOGRAFÍA ORGANIZADO ===== */
+/* ===== SISTEMA DE TIPOGRAFÍA UNIFICADO - SOLO INTER ===== */
 
-/* Headings - Sistema jerárquico claro */
+/* Headings - Sistema jerárquico claro con Inter */
 .heading-display {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 800;
   line-height: 1.1;
@@ -78,7 +78,7 @@ body {
 }
 
 .heading-1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 700;
   line-height: 1.2;
@@ -88,7 +88,7 @@ body {
 }
 
 .heading-2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
@@ -98,7 +98,7 @@ body {
 }
 
 .heading-3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 600;
   line-height: 1.3;
@@ -108,7 +108,7 @@ body {
 }
 
 .heading-4 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 600;
   line-height: 1.4;

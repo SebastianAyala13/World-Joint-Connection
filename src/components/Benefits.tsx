@@ -130,7 +130,7 @@ export default function Benefits() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg text-secondary max-w-3xl mx-auto"
+            className="text-lg text-secondary max-w-3xl mx-auto text-center"
           >
             Descubre cómo nuestros servicios pueden revolucionar tu empresa 
             con beneficios tangibles y resultados medibles.

@@ -17,7 +17,7 @@ export default function CTA() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-outfit font-bold mb-6">
             ¿Listo para transformar tu negocio?
           </h2>
-          <p className="text-white/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
+          <p className="text-white/70 text-lg md:text-xl mb-12 max-w-2xl mx-auto text-center">
             Únete a cientos de empresas que ya confían en World Joint Connection
           </p>
 

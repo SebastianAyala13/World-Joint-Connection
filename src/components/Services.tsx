@@ -130,7 +130,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg text-secondary max-w-3xl mx-auto"
+            className="text-lg text-secondary max-w-3xl mx-auto text-center"
           >
             Ofrecemos servicios especializados diseñados para impulsar el crecimiento de tu empresa 
             con tecnología de vanguardia y atención personalizada.

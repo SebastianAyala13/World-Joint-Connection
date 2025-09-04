@@ -25,7 +25,7 @@ export default function CasesGrid() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {cases.map((caseItem, index) => (
+          {cases.map((caseItem) => (
             <motion.div
               key={caseItem.id}
               initial={{ opacity: 0, y: 20 }}

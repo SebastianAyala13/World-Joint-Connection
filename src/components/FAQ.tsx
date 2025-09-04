@@ -101,7 +101,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg text-secondary max-w-3xl mx-auto"
+            className="text-lg text-secondary max-w-3xl mx-auto text-center"
           >
             Encuentra respuestas rápidas a las preguntas más frecuentes sobre nuestros servicios, 
             implementación y soporte técnico.
